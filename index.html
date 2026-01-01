@@ -83,7 +83,7 @@
                 <button onclick="closeModal()" class="text-gray-500 hover:text-white text-xl">&times;</button>
             </div>
 
-            <form action="YOUR_GOOGLE_SCRIPT_URL_HERE" method="POST" target="hidden_iframe" onsubmit="disableButton()">
+            <form id="regForm" action="https://script.google.com/macros/s/AKfycbxO0sHX5H-ODxS_jwehS6ArRBt3FVA_W8YFkIwcG2JDcnzO8BTIpu2mtPsp4FcDfuWFwA/exec" method="POST" target="hidden_iframe" onsubmit="disableButton()">
                 
                 <div class="space-y-4">
                     <div>
@@ -98,10 +98,16 @@
                             <input type="text" name="Telegram" required placeholder="username" class="w-full bg-black/50 border border-gray-700 rounded-lg pl-8 pr-4 py-3 text-white focus:border-telegram focus:outline-none transition-colors">
                         </div>
                     </div>
+
+                    <div>
+                        <label class="text-xs text-gray-400 ml-1">Phone Number <span class="text-gray-600">(Optional)</span></label>
+                        <input type="tel" name="Phone" placeholder="Mobile Number" class="w-full bg-black/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-indigo-500 outline-none transition-colors">
+                    </div>
                     
                     <div class="bg-indigo-900/20 border border-indigo-500/20 rounded-lg p-4 text-center">
                         <p class="text-xs text-indigo-300 mb-3">Step 1: Pay Entry Fee</p>
-                        <a href="YOUR_CASHFREE_LINK_HERE" target="_blank" class="block w-full bg-green-600 hover:bg-green-500 text-white font-bold py-2 rounded-lg mb-3 transition-colors">
+                        
+                        <a href="https://payments.cashfree.com/forms/mindgame" target="_blank" class="block w-full bg-green-600 hover:bg-green-500 text-white font-bold py-2 rounded-lg mb-3 transition-colors">
                             Pay ₹50
                         </a>
                         
@@ -120,23 +126,35 @@
 
     <div id="rulesModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
         <div class="fixed inset-0 bg-black/90 backdrop-blur-sm" onclick="closeRules()"></div>
-        <div class="relative bg-gray-900 border border-white/10 rounded-2xl w-full max-w-sm p-6">
-            <h3 class="text-xl font-bold font-heading mb-4 text-white">How It Works</h3>
-            <div class="space-y-4">
-                <div class="flex gap-3">
-                    <div class="bg-gray-800 h-8 w-8 rounded-full flex items-center justify-center text-xs font-bold text-indigo-400">1</div>
-                    <div class="text-sm text-gray-300"><strong class="text-white block">Round 1 (9:00 PM)</strong>8 Tables. 32 Players. Winners move to Semi-Finals.</div>
+        <div class="relative bg-gray-900 border border-white/10 rounded-2xl w-full max-w-md p-6 shadow-2xl overflow-y-auto max-h-[80vh]">
+            
+            <div class="flex justify-between items-center mb-4 border-b border-gray-700 pb-2">
+                <h3 class="text-xl font-bold font-heading text-white">Terms & Conditions</h3>
+                <button onclick="closeRules()" class="text-gray-500 hover:text-white font-bold text-xl">&times;</button>
+            </div>
+
+            <div class="space-y-4 text-sm text-gray-300">
+                <div>
+                    <h4 class="text-indigo-400 font-bold mb-1">1. Registration Policy</h4>
+                    <ul class="list-disc pl-4 space-y-1 text-gray-400">
+                        <li>Entry Fee: ₹50 (Non-refundable unless event cancelled).</li>
+                        <li>Limit: First 32 players only.</li>
+                        <li><strong>Refunds:</strong> If you pay after slots are full, you get a 100% refund within 24 hours.</li>
+                    </ul>
                 </div>
-                <div class="flex gap-3">
-                    <div class="bg-gray-800 h-8 w-8 rounded-full flex items-center justify-center text-xs font-bold text-indigo-400">2</div>
-                    <div class="text-sm text-gray-300"><strong class="text-white block">Semi-Finals</strong>2 Tables. 8 Players. Winners move to Final.</div>
-                </div>
-                <div class="flex gap-3">
-                    <div class="bg-gray-800 h-8 w-8 rounded-full flex items-center justify-center text-xs font-bold text-indigo-400">3</div>
-                    <div class="text-sm text-gray-300"><strong class="text-white block">Grand Final</strong>1 vs 1 Battle. Winner takes ₹500.</div>
+                <div>
+                    <h4 class="text-indigo-400 font-bold mb-1">2. Game Rules</h4>
+                    <ul class="list-disc pl-4 space-y-1 text-gray-400">
+                        <li><strong>App:</strong> Ludo King (Classic Mode).</li>
+                        <li><strong>Timings:</strong> You must be online at 9:00 PM.</li>
+                        <li><strong>Late Rule:</strong> Maximum 10 mins wait time. If you are late, you are disqualified (No Refund).</li>
+                    </ul>
                 </div>
             </div>
-            <button onclick="closeRules()" class="w-full mt-6 bg-white/10 hover:bg-white/20 py-2 rounded-lg text-sm font-bold">Close</button>
+
+            <button onclick="closeRules()" class="w-full mt-6 bg-indigo-600 hover:bg-indigo-500 py-3 rounded-lg text-white font-bold transition-colors">
+                I Agree & Close
+            </button>
         </div>
     </div>
 
@@ -144,12 +162,6 @@
         var submitted = false;
         const modal = document.getElementById('regModal');
         const rulesModal = document.getElementById('rulesModal');
-
-        // 🔥 ACTION REQUIRED: PASTE YOUR LINKS HERE
-        const PAYMENT_LINK = "https://cashfree.com/your-link-here"; 
-        
-        // Link logic for the button
-        document.querySelector('a[href="YOUR_CASHFREE_LINK_HERE"]').href = PAYMENT_LINK;
 
         function openModal() { modal.classList.remove('hidden'); modal.classList.add('flex'); submitted = false; }
         function closeModal() { modal.classList.add('hidden'); modal.classList.remove('flex'); }
@@ -160,7 +172,6 @@
             const utrValue = document.getElementById('utr').value;
             const btn = document.getElementById('submitBtn');
             
-            // Simple check: UTR/Order ID must be at least 5 characters
             if(utrValue.length >= 5) {
                 btn.disabled = false;
                 btn.className = "w-full bg-green-600 hover:bg-green-500 text-white font-bold py-3 rounded-lg shadow-lg cursor-pointer transform hover:scale-[1.02]";
@@ -179,9 +190,13 @@
 
         function successMessage() { 
             if(submitted) { 
-                alert("✅ Registration Successful!\n\nPlease join the Telegram Group for the match list at 9:00 PM."); 
+                alert("✅ Registration Successful!\n\nIMPORTANT: Click OK to join the Telegram Group.\nWe will post the Match Table there at 9:00 PM."); 
+                
                 closeModal(); 
-                document.querySelector('form').reset();
+                document.getElementById('regForm').reset();
+
+                // 🔥 UPDATE THIS LINK TO YOUR TELEGRAM GROUP
+                window.location.href = "https://t.me/YOUR_TELEGRAM_GROUP";
             } 
         }
     </script>
