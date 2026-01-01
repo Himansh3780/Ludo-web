@@ -29,7 +29,7 @@
             <span class="w-2 h-2 rounded-full bg-green-500"></span> REGISTRATION OPEN
         </div>
         <h1 class="text-5xl md:text-7xl font-bold font-heading mb-2 uppercase tracking-tight">Daily <span class="text-indigo-500 neon-text">Knockout</span></h1>
-        <p class="text-gray-400 text-sm md:text-base">32 Players. 3 Rounds. 1 Champion.</p>
+        <p class="text-gray-400 text-sm md:text-base">32 Players. 3 Rounds.</p>
     </div>
 
     <div class="w-full max-w-sm glass rounded-2xl overflow-hidden shadow-2xl shadow-indigo-500/10 relative">
@@ -37,9 +37,13 @@
         <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/20 blur-3xl rounded-full pointer-events-none"></div>
 
         <div class="p-6">
-            <div class="text-center mb-6">
-                <p class="text-indigo-300 text-xs font-bold uppercase tracking-widest mb-1">Winner Takes Home</p>
-                <div class="text-6xl font-bold font-heading text-white neon-text">₹500</div>
+            <div class="text-center mb-6 bg-white/5 rounded-xl p-4 border border-white/5">
+                <p class="text-indigo-300 text-xs font-bold uppercase tracking-widest mb-1">🥇 1st Prize</p>
+                <div class="text-5xl font-bold font-heading text-white neon-text mb-2">₹500</div>
+                
+                <div class="inline-block bg-yellow-500/20 border border-yellow-500/40 text-yellow-300 px-3 py-1 rounded-full text-xs font-bold">
+                    🥈 2nd Place: ₹100
+                </div>
             </div>
 
             <div class="grid grid-cols-2 gap-3 mb-6">
@@ -135,11 +139,11 @@
 
             <div class="space-y-4 text-sm text-gray-300">
                 <div>
-                    <h4 class="text-indigo-400 font-bold mb-1">1. Registration Policy</h4>
+                    <h4 class="text-indigo-400 font-bold mb-1">1. Prize Money</h4>
                     <ul class="list-disc pl-4 space-y-1 text-gray-400">
-                        <li>Entry Fee: ₹50 (Non-refundable unless event cancelled).</li>
-                        <li>Limit: First 32 players only.</li>
-                        <li><strong>Refunds:</strong> If you pay after slots are full, you get a 100% refund within 24 hours.</li>
+                        <li><strong>1st Rank:</strong> ₹500</li>
+                        <li><strong>2nd Rank:</strong> ₹100 (Money Double)</li>
+                        <li>Payments are made via UPI immediately after the final match.</li>
                     </ul>
                 </div>
                 <div>
@@ -149,6 +153,13 @@
                         <li><strong>Timings:</strong> You must be online at 9:00 PM.</li>
                         <li><strong>Late Rule:</strong> Maximum 10 mins wait time. If you are late, you are disqualified (No Refund).</li>
                     </ul>
+                </div>
+                <div>
+                     <h4 class="text-indigo-400 font-bold mb-1">3. Registration</h4>
+                     <ul class="list-disc pl-4 space-y-1 text-gray-400">
+                        <li>Fee: ₹50. Limit: 32 Players.</li>
+                        <li>Refunds given if you pay after slots are full.</li>
+                     </ul>
                 </div>
             </div>
 
@@ -190,13 +201,15 @@
 
         function successMessage() { 
             if(submitted) { 
-                alert("✅ Registration Successful!\n\nIMPORTANT: Click OK to join the Telegram Group.\nWe will post the Match Table there at 9:00 PM."); 
+                // 1. Show the success message
+                alert("✅ Registration Successful!\n\nClick OK to join our Telegram Channel for updates."); 
                 
+                // 2. Clear the form and close popup
                 closeModal(); 
                 document.getElementById('regForm').reset();
 
-                // 🔥 UPDATE THIS LINK TO YOUR TELEGRAM GROUP
-                window.location.href = "https://t.me/YOUR_TELEGRAM_GROUP";
+                // 3. REDIRECT TO YOUR TELEGRAM CHANNEL
+                window.location.href = "https://t.me/ludokingdripify";
             } 
         }
     </script>
