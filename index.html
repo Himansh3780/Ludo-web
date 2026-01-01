@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Daily Ludo Knockout | 32 Players Only</title>
+    <title>Daily Ludo Knockout | High Stakes</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <script>
@@ -29,7 +29,7 @@
             <span class="w-2 h-2 rounded-full bg-green-500"></span> REGISTRATION OPEN
         </div>
         <h1 class="text-5xl md:text-7xl font-bold font-heading mb-2 uppercase tracking-tight">Daily <span class="text-indigo-500 neon-text">Knockout</span></h1>
-        <p class="text-gray-400 text-sm md:text-base">32 Players. 3 Rounds.</p>
+        <p class="text-gray-400 text-sm md:text-base">32 Players. High Stakes. 1 Champion.</p>
     </div>
 
     <div class="w-full max-w-sm glass rounded-2xl overflow-hidden shadow-2xl shadow-indigo-500/10 relative">
@@ -39,17 +39,17 @@
         <div class="p-6">
             <div class="text-center mb-6 bg-white/5 rounded-xl p-4 border border-white/5">
                 <p class="text-indigo-300 text-xs font-bold uppercase tracking-widest mb-1">🥇 1st Prize</p>
-                <div class="text-5xl font-bold font-heading text-white neon-text mb-2">₹500</div>
+                <div class="text-5xl font-bold font-heading text-white neon-text mb-2">₹1000</div>
                 
                 <div class="inline-block bg-yellow-500/20 border border-yellow-500/40 text-yellow-300 px-3 py-1 rounded-full text-xs font-bold">
-                    🥈 2nd Place: ₹100
+                    🥈 2nd Place: ₹200
                 </div>
             </div>
 
             <div class="grid grid-cols-2 gap-3 mb-6">
                 <div class="bg-white/5 rounded-lg p-3 text-center border border-white/5">
                     <span class="block text-gray-400 text-[10px] uppercase">Entry Fee</span>
-                    <span class="text-xl font-bold text-green-400">₹50</span>
+                    <span class="text-xl font-bold text-green-400">₹100</span>
                 </div>
                 <div class="bg-white/5 rounded-lg p-3 text-center border border-white/5">
                     <span class="block text-gray-400 text-[10px] uppercase">Start Time</span>
@@ -65,68 +65,21 @@
                 <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
                     <div class="h-full bg-gradient-to-r from-indigo-600 to-purple-500 w-3/4"></div>
                 </div>
-                <p class="text-[10px] text-gray-500 mt-2 text-center">First come, first serve. Money refunded if full.</p>
+                <p class="text-[10px] text-gray-500 mt-2 text-center">Auto-refund if payment made after house full.</p>
             </div>
 
-            <button onclick="openModal()" class="w-full bg-indigo-600 hover:bg-indigo-500 text-white font-bold py-4 rounded-xl text-lg transition-all shadow-lg shadow-indigo-600/25">
-                JOIN NOW
-            </button>
+            <a href="https://rzp.io/rzp/adlUzxS" class="block w-full bg-indigo-600 hover:bg-indigo-500 text-white text-center font-bold py-4 rounded-xl text-lg transition-all shadow-lg shadow-indigo-600/25 transform hover:scale-[1.02]">
+                PAY ₹100 & JOIN
+            </a>
+            <p class="text-[10px] text-gray-500 mt-3 text-center">
+                Secure Payment by Razorpay. Name & Telegram collected on next screen.
+            </p>
         </div>
         
         <div class="bg-black/20 p-3 text-center border-t border-white/5 flex justify-center gap-4 text-xs font-bold text-gray-400">
             <button onclick="openRules()" class="hover:text-white">📜 Tournament Rules</button>
         </div>
     </div>
-
-    <div id="regModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
-        <div class="fixed inset-0 bg-black/90 backdrop-blur-sm" onclick="closeModal()"></div>
-        <div class="relative bg-gray-900 border border-white/10 rounded-2xl w-full max-w-sm p-6 shadow-2xl">
-            
-            <div class="flex justify-between items-center mb-5">
-                <h3 class="text-xl font-bold font-heading text-white">Player Registration</h3>
-                <button onclick="closeModal()" class="text-gray-500 hover:text-white text-xl">&times;</button>
-            </div>
-
-            <form id="regForm" action="https://script.google.com/macros/s/AKfycbyfCqFHxD_RAJBFbYXdZAH6MvVZAI2mfPIVPCKk0W23FCojdeh2CUlE2SF850Xq0IY/exec" method="POST" target="hidden_iframe" onsubmit="disableButton()">
-                
-                <div class="space-y-4">
-                    <div>
-                        <label class="text-xs text-gray-400 ml-1">Full Name</label>
-                        <input type="text" name="Name" required placeholder="e.g. Rahul Kumar" class="w-full bg-black/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-indigo-500 outline-none transition-colors">
-                    </div>
-
-                    <div>
-                        <label class="text-xs text-gray-400 ml-1">Telegram Username</label>
-                        <div class="relative">
-                            <span class="absolute left-4 top-3 text-gray-500">@</span>
-                            <input type="text" name="Telegram" required placeholder="username" class="w-full bg-black/50 border border-gray-700 rounded-lg pl-8 pr-4 py-3 text-white focus:border-telegram focus:outline-none transition-colors">
-                        </div>
-                    </div>
-
-                    <div>
-                        <label class="text-xs text-gray-400 ml-1">Phone Number <span class="text-gray-600">(Optional)</span></label>
-                        <input type="tel" name="Phone" placeholder="Mobile Number" class="w-full bg-black/50 border border-gray-700 rounded-lg px-4 py-3 text-white focus:border-indigo-500 outline-none transition-colors">
-                    </div>
-                    
-                    <div class="bg-indigo-900/20 border border-indigo-500/20 rounded-lg p-4 text-center">
-                        <p class="text-xs text-indigo-300 mb-3">Step 1: Pay Entry Fee</p>
-                        
-                        <a href="https://payments.cashfree.com/forms/mindgame" target="_blank" class="block w-full bg-green-600 hover:bg-green-500 text-white font-bold py-2 rounded-lg mb-3 transition-colors">
-                            Pay ₹50
-                        </a>
-                        
-                        <p class="text-xs text-indigo-300 mb-2">Step 2: Paste Transaction/Order ID</p>
-                        <input type="text" id="utr" name="TransactionID" placeholder="Paste ID Here" oninput="checkUTR()" class="w-full bg-black border border-gray-600 rounded p-2 text-center text-sm text-white focus:border-green-500 outline-none">
-                    </div>
-
-                    <button id="submitBtn" type="submit" disabled class="w-full bg-gray-700 text-gray-400 font-bold py-3 rounded-lg cursor-not-allowed transition-all">
-                        Confirm Registration
-                    </button>
-                </div>
-            </form>
-            </div>
-    </div>
-    <iframe name="hidden_iframe" style="display:none;" onload="if(submitted) {successMessage();}"></iframe>
 
     <div id="rulesModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
         <div class="fixed inset-0 bg-black/90 backdrop-blur-sm" onclick="closeRules()"></div>
@@ -141,8 +94,8 @@
                 <div>
                     <h4 class="text-indigo-400 font-bold mb-1">1. Prize Money</h4>
                     <ul class="list-disc pl-4 space-y-1 text-gray-400">
-                        <li><strong>1st Rank:</strong> ₹500</li>
-                        <li><strong>2nd Rank:</strong> ₹100 (Money Double)</li>
+                        <li><strong>1st Rank:</strong> ₹1000</li>
+                        <li><strong>2nd Rank:</strong> ₹200 (Double Money Back)</li>
                         <li>Payments are made via UPI immediately after the final match.</li>
                     </ul>
                 </div>
@@ -157,7 +110,7 @@
                 <div>
                      <h4 class="text-indigo-400 font-bold mb-1">3. Registration</h4>
                      <ul class="list-disc pl-4 space-y-1 text-gray-400">
-                        <li>Fee: ₹50. Limit: 32 Players.</li>
+                        <li>Fee: ₹100. Limit: 32 Players.</li>
                         <li>Refunds given if you pay after slots are full.</li>
                      </ul>
                 </div>
@@ -170,48 +123,9 @@
     </div>
 
     <script>
-        var submitted = false;
-        const modal = document.getElementById('regModal');
         const rulesModal = document.getElementById('rulesModal');
-
-        function openModal() { modal.classList.remove('hidden'); modal.classList.add('flex'); submitted = false; }
-        function closeModal() { modal.classList.add('hidden'); modal.classList.remove('flex'); }
         function openRules() { rulesModal.classList.remove('hidden'); rulesModal.classList.add('flex'); }
         function closeRules() { rulesModal.classList.add('hidden'); rulesModal.classList.remove('flex'); }
-
-        function checkUTR() {
-            const utrValue = document.getElementById('utr').value;
-            const btn = document.getElementById('submitBtn');
-            
-            if(utrValue.length >= 5) {
-                btn.disabled = false;
-                btn.className = "w-full bg-green-600 hover:bg-green-500 text-white font-bold py-3 rounded-lg shadow-lg cursor-pointer transform hover:scale-[1.02]";
-            } else {
-                btn.disabled = true;
-                btn.className = "w-full bg-gray-700 text-gray-400 font-bold py-3 rounded-lg cursor-not-allowed";
-            }
-        }
-
-        function disableButton() { 
-            submitted = true; 
-            const btn = document.getElementById('submitBtn');
-            btn.innerText = "Processing..."; 
-            btn.disabled = true;
-        }
-
-        function successMessage() { 
-            if(submitted) { 
-                // 1. Show the success message
-                alert("✅ Registration Successful!\n\nClick OK to join our Telegram Channel for updates."); 
-                
-                // 2. Clear the form and close popup
-                closeModal(); 
-                document.getElementById('regForm').reset();
-
-                // 3. REDIRECT TO YOUR TELEGRAM CHANNEL
-                window.location.href = "https://t.me/ludokingdripify";
-            } 
-        }
     </script>
 </body>
 </html>
