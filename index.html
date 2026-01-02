@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-    <title>Daily Ludo Knockout | High Stakes</title>
+    <title>Daily Ludo | Play & Earn</title>
     <script src="https://cdn.tailwindcss.com"></script>
     <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@600;700&family=Inter:wght@400;600&display=swap" rel="stylesheet">
     <script>
@@ -11,7 +11,6 @@
             theme: {
                 extend: {
                     fontFamily: { heading: ['Rajdhani', 'sans-serif'], body: ['Inter', 'sans-serif'] },
-                    colors: { brand: '#6366f1', dark: '#0f172a' }
                 }
             }
         }
@@ -20,112 +19,78 @@
         body { background-color: #050b14; color: white; background-image: radial-gradient(circle at 50% 0%, #1e1b4b 0%, transparent 50%); }
         .glass { background: rgba(15, 23, 42, 0.8); border: 1px solid rgba(255, 255, 255, 0.1); backdrop-filter: blur(12px); }
         .neon-text { text-shadow: 0 0 10px rgba(99, 102, 241, 0.5); }
+        .card-hover:hover { transform: translateY(-5px); border-color: rgba(99, 102, 241, 0.5); }
     </style>
 </head>
 <body class="min-h-screen font-body flex flex-col items-center justify-center p-4">
 
-    <div class="text-center mb-6">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-full bg-green-900/30 border border-green-500/30 text-green-400 text-xs font-bold mb-4 animate-pulse">
-            <span class="w-2 h-2 rounded-full bg-green-500"></span> REGISTRATION OPEN
-        </div>
-        <h1 class="text-5xl md:text-7xl font-bold font-heading mb-2 uppercase tracking-tight">Daily <span class="text-indigo-500 neon-text">Knockout</span></h1>
-        <p class="text-gray-400 text-sm md:text-base">32 Players. High Stakes. 1 Champion.</p>
+    <div class="text-center mb-8">
+        <h1 class="text-5xl font-bold font-heading mb-2 uppercase tracking-tight">Daily <span class="text-indigo-500 neon-text">Knockout</span></h1>
+        <p class="text-gray-400">Select a Game Mode to Start</p>
     </div>
 
-    <div class="w-full max-w-sm glass rounded-2xl overflow-hidden shadow-2xl shadow-indigo-500/10 relative">
-        
-        <div class="absolute top-0 right-0 w-32 h-32 bg-indigo-500/20 blur-3xl rounded-full pointer-events-none"></div>
+    <div class="grid md:grid-cols-2 gap-6 w-full max-w-4xl">
 
-        <div class="p-6">
-            <div class="text-center mb-6 bg-white/5 rounded-xl p-4 border border-white/5">
-                <p class="text-indigo-300 text-xs font-bold uppercase tracking-widest mb-1">🥇 1st Prize</p>
-                <div class="text-5xl font-bold font-heading text-white neon-text mb-2">₹1000</div>
-                
-                <div class="inline-block bg-yellow-500/20 border border-yellow-500/40 text-yellow-300 px-3 py-1 rounded-full text-xs font-bold">
-                    🥈 2nd Place: ₹200
+        <div class="glass rounded-2xl p-6 relative overflow-hidden transition-all duration-300 card-hover border border-white/5">
+            <div class="absolute top-0 right-0 bg-blue-600 text-xs font-bold px-3 py-1 rounded-bl-lg">9:00 PM</div>
+            
+            <h2 class="text-3xl font-heading font-bold mb-1">🏆 Mega Tournament</h2>
+            <p class="text-gray-400 text-sm mb-4">32 Players • 3 Rounds • Big Prize</p>
+
+            <div class="flex justify-between items-center bg-black/30 p-3 rounded-lg mb-4">
+                <div class="text-center">
+                    <div class="text-[10px] text-gray-500 uppercase">Entry</div>
+                    <div class="text-xl font-bold text-green-400">₹100</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-[10px] text-gray-500 uppercase">1st Prize</div>
+                    <div class="text-xl font-bold text-yellow-400">₹1000</div>
                 </div>
             </div>
 
-            <div class="grid grid-cols-2 gap-3 mb-6">
-                <div class="bg-white/5 rounded-lg p-3 text-center border border-white/5">
-                    <span class="block text-gray-400 text-[10px] uppercase">Entry Fee</span>
-                    <span class="text-xl font-bold text-green-400">₹100</span>
-                </div>
-                <div class="bg-white/5 rounded-lg p-3 text-center border border-white/5">
-                    <span class="block text-gray-400 text-[10px] uppercase">Start Time</span>
-                    <span class="text-xl font-bold text-white">9:00 PM</span>
-                </div>
-            </div>
-
-            <div class="mb-6">
-                <div class="flex justify-between text-xs mb-2 font-bold">
-                    <span class="text-gray-400">Limited Spots</span>
-                    <span class="text-indigo-400">Max 32 Players</span>
-                </div>
-                <div class="h-2 bg-gray-800 rounded-full overflow-hidden">
-                    <div class="h-full bg-gradient-to-r from-indigo-600 to-purple-500 w-3/4"></div>
-                </div>
-                <p class="text-[10px] text-gray-500 mt-2 text-center">Auto-refund if payment made after house full.</p>
-            </div>
-
-            <a href="https://rzp.io/rzp/adlUzxS" class="block w-full bg-indigo-600 hover:bg-indigo-500 text-white text-center font-bold py-4 rounded-xl text-lg transition-all shadow-lg shadow-indigo-600/25 transform hover:scale-[1.02]">
-                PAY ₹100 & JOIN
+            <a href="https://rzp.io/rzp/adlUzxS" class="block w-full bg-blue-600 hover:bg-blue-500 text-white text-center font-bold py-3 rounded-xl transition-colors">
+                JOIN TOURNAMENT
             </a>
-            <p class="text-[10px] text-gray-500 mt-3 text-center">
-                Secure Payment by Razorpay. Name & Telegram collected on next screen.
+        </div>
+
+        <div class="glass rounded-2xl p-6 relative overflow-hidden transition-all duration-300 card-hover border border-white/5">
+            <div class="absolute top-0 right-0 bg-red-600 text-xs font-bold px-3 py-1 rounded-bl-lg">LIVE NOW</div>
+            
+            <h2 class="text-3xl font-heading font-bold mb-1">⚔️ Beat the Admin</h2>
+            <p class="text-gray-400 text-sm mb-4">1 vs 3 • You vs Admin • Instant Host</p>
+
+            <div class="flex justify-between items-center bg-black/30 p-3 rounded-lg mb-4">
+                <div class="text-center">
+                    <div class="text-[10px] text-gray-500 uppercase">Entry</div>
+                    <div class="text-xl font-bold text-green-400">₹200</div>
+                </div>
+                <div class="text-center">
+                    <div class="text-[10px] text-gray-500 uppercase">Winner</div>
+                    <div class="text-xl font-bold text-yellow-400">₹500</div>
+                </div>
+            </div>
+
+            <a href="https://rzp.io/rzp/1YGvo8Jz" class="block w-full bg-red-600 hover:bg-red-500 text-white text-center font-bold py-3 rounded-xl transition-colors">
+                CHALLENGE ADMIN
+            </a>
+        </div>
+
+    </div>
+
+    <footer class="bg-black/40 backdrop-blur-md border-t border-white/5 mt-12 py-6 w-full">
+        <div class="container mx-auto px-4 text-center">
+            <div class="flex flex-wrap justify-center gap-4 mb-4 text-xs font-bold text-gray-400 uppercase tracking-widest">
+                <a href="terms.html" class="hover:text-indigo-400 transition-colors">Terms</a>
+                <span class="text-gray-700">|</span>
+                <a href="privacy.html" class="hover:text-indigo-400 transition-colors">Privacy</a>
+                <span class="text-gray-700">|</span>
+                <a href="contact.html" class="hover:text-indigo-400 transition-colors">Contact</a>
+            </div>
+            <p class="text-[10px] text-gray-600">
+                © 2024 Daily Ludo Knockout. All rights reserved. Play responsibly.
             </p>
         </div>
-        
-        <div class="bg-black/20 p-3 text-center border-t border-white/5 flex justify-center gap-4 text-xs font-bold text-gray-400">
-            <button onclick="openRules()" class="hover:text-white">📜 Tournament Rules</button>
-        </div>
-    </div>
+    </footer>
 
-    <div id="rulesModal" class="fixed inset-0 z-50 hidden items-center justify-center p-4">
-        <div class="fixed inset-0 bg-black/90 backdrop-blur-sm" onclick="closeRules()"></div>
-        <div class="relative bg-gray-900 border border-white/10 rounded-2xl w-full max-w-md p-6 shadow-2xl overflow-y-auto max-h-[80vh]">
-            
-            <div class="flex justify-between items-center mb-4 border-b border-gray-700 pb-2">
-                <h3 class="text-xl font-bold font-heading text-white">Terms & Conditions</h3>
-                <button onclick="closeRules()" class="text-gray-500 hover:text-white font-bold text-xl">&times;</button>
-            </div>
-
-            <div class="space-y-4 text-sm text-gray-300">
-                <div>
-                    <h4 class="text-indigo-400 font-bold mb-1">1. Prize Money</h4>
-                    <ul class="list-disc pl-4 space-y-1 text-gray-400">
-                        <li><strong>1st Rank:</strong> ₹1000</li>
-                        <li><strong>2nd Rank:</strong> ₹200 (Double Money Back)</li>
-                        <li>Payments are made via UPI immediately after the final match.</li>
-                    </ul>
-                </div>
-                <div>
-                    <h4 class="text-indigo-400 font-bold mb-1">2. Game Rules</h4>
-                    <ul class="list-disc pl-4 space-y-1 text-gray-400">
-                        <li><strong>App:</strong> Ludo King (Classic Mode).</li>
-                        <li><strong>Timings:</strong> You must be online at 9:00 PM.</li>
-                        <li><strong>Late Rule:</strong> Maximum 10 mins wait time. If you are late, you are disqualified (No Refund).</li>
-                    </ul>
-                </div>
-                <div>
-                     <h4 class="text-indigo-400 font-bold mb-1">3. Registration</h4>
-                     <ul class="list-disc pl-4 space-y-1 text-gray-400">
-                        <li>Fee: ₹100. Limit: 32 Players.</li>
-                        <li>Refunds given if you pay after slots are full.</li>
-                     </ul>
-                </div>
-            </div>
-
-            <button onclick="closeRules()" class="w-full mt-6 bg-indigo-600 hover:bg-indigo-500 py-3 rounded-lg text-white font-bold transition-colors">
-                I Agree & Close
-            </button>
-        </div>
-    </div>
-
-    <script>
-        const rulesModal = document.getElementById('rulesModal');
-        function openRules() { rulesModal.classList.remove('hidden'); rulesModal.classList.add('flex'); }
-        function closeRules() { rulesModal.classList.add('hidden'); rulesModal.classList.remove('flex'); }
-    </script>
 </body>
 </html>
